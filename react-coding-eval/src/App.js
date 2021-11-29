@@ -7,6 +7,8 @@ import { Dashboard } from './components/Dashboard';
 import { Home } from './components/Home';
 import { About } from './components/About';
 import { Newshows } from './components/Newshow';
+import { Login } from './components/Login';
+import { PrivateRoute } from './components/PrivateRoute';
 function App() {
   return (
     <div className="App">
@@ -16,14 +18,17 @@ function App() {
           <Route exact path = "/">
            <Home />
           </Route>
-          <Route  path = "/dashboard">
-           <Dashboard />
-          </Route>
+          <PrivateRoute path = "/dashboard">
+              <Dashboard />
+          </PrivateRoute>
           <Route  path = "/newshows">
            <Newshows />
           </Route>
           <Route  path = "/about">
             <About />
+          </Route>
+          <Route path = "/login">
+              <Login />
           </Route>
           <Route >
             <h1>Page not exist</h1>

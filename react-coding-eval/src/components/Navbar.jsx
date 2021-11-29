@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 
 export const Navbar = ()=>{
     return (
-        <div>
+        <div style={{display:"flex", gap:"20px", margin:"auto"}}>
             <Link to="/" >Home</Link>
             <Link to="/dashboard" >Dashboard</Link>
             <Link to="/about" >About US</Link>

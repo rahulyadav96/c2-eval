@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { getDataError, getDataLoading, getDataSuccess } from "../Redux/actions";
 import axios from "axios";
+import { Card } from "./Card";
 
 export const Dashboard= ()=>{
     
@@ -12,7 +13,7 @@ export const Dashboard= ()=>{
        fetchData()
        
     }, [])
-console.log(data)
+//console.log(data)
     const fetchData = ()=>{
        // dispatch(getDataLoading())
         axios.get("http://localhost:3001/data")
@@ -31,25 +32,24 @@ console.log(data)
         <section className = "booked"></section>
         <section className = "movies">
             <h1>Movies</h1>
-            <div>
-              {
-                  data.movies.map()
-              }
-            </div>
+            {
+                data.length>0? data[0].movies.map((ele)=><Card data = {ele} />):<div>Loading...</div>
+            }
+           
         </section>
         <section>
             <h1>Events</h1>
-            <div>
-                envents sections
-            </div>
+            {
+                data.length>0? data[0].movies.map((ele)=><Card data = {ele} />):<div>Loading...</div>
+            }
         </section>
         <section>
             <h1>
                 plays:
             </h1>
-            <div>
-                plays sections
-            </div>
+            {
+                data.length>0? data[0].movies.map((ele)=><Card data = {ele} />):<div>Loading...</div>
+            }
         </section>
     </div>
 }

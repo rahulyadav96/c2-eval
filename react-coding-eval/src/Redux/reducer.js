@@ -5,7 +5,7 @@ const initState = {
     data : [],
     error:false
 }
-const findDate = (state = initState, {type, payload})=>{
+ export const BookMyShow = (state = initState, {type, payload})=>{
 
     switch(type){
         case GET_DATA_LOADING:
@@ -19,14 +19,14 @@ const findDate = (state = initState, {type, payload})=>{
                 return {
                     ...state,
                     loading:false,
-                    data = payload
+                    data : payload
                 }
 
         case GET_DATA_ERROR :
             return{
                 ...state,
                 loading:false,
-                error = true
+                error : true
             }
     }
 }

@@ -1,4 +1,5 @@
 import { useContext, useState } from "react"
+import { Redirect } from "react-router"
 
 import { AuthContext } from "../context/AuthContext"
 
@@ -8,6 +9,7 @@ export const Login = () =>{
     const handleSubmit = ()=>{
        let newtoken = Date.now()
         handleToken(newtoken);
+       
     }
     return (token == "")?<div>
         <form onSubmit = {handleSubmit}>
@@ -17,5 +19,5 @@ export const Login = () =>{
             <br />
             <input type = "submit" value = "Submit" />
         </form>
-    </div>:<div>User is LogedIn</div>
+    </div>: <Redirect to="./dashboard"/>
 }

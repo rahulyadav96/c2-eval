@@ -43,7 +43,7 @@ export const Dashboard= ()=>{
             <h1>Events</h1>
             <div style = {{display: "flex", gap:"20px"}}>
             {
-                data.length>0? data[0].movies.map((ele)=><Card data = {ele} />):<div>Loading...</div>
+                data.length>0? data[0].events.map((ele)=><Card data = {ele} />):<div>Loading...</div>
             }
              </div>
         </section>
@@ -53,7 +53,7 @@ export const Dashboard= ()=>{
             </h1>
             <div style = {{display: "flex", gap:"20px"}}>
             {
-                data.length>0? data[0].movies.map((ele)=><Card data = {ele} />):<div>Loading...</div>
+                data.length>0? data[0].plays.map((ele)=><Card data = {ele} />):<div>Loading...</div>
             }
              </div>
         </section>

@@ -32,24 +32,30 @@ export const Dashboard= ()=>{
         <section className = "booked"></section>
         <section className = "movies">
             <h1>Movies</h1>
+            <div style = {{display:"flex", gap:"20px", margin:"auto"}}>
             {
                 data.length>0? data[0].movies.map((ele)=><Card data = {ele} />):<div>Loading...</div>
             }
+             </div>
            
         </section>
         <section>
             <h1>Events</h1>
+            <div style = {{display: "flex", gap:"20px"}}>
             {
                 data.length>0? data[0].movies.map((ele)=><Card data = {ele} />):<div>Loading...</div>
             }
+             </div>
         </section>
         <section>
             <h1>
                 plays:
             </h1>
+            <div style = {{display: "flex", gap:"20px"}}>
             {
                 data.length>0? data[0].movies.map((ele)=><Card data = {ele} />):<div>Loading...</div>
             }
+             </div>
         </section>
     </div>
 }

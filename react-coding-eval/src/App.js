@@ -9,6 +9,7 @@ import { About } from './components/About';
 import { Newshows } from './components/Newshow';
 import { Login } from './components/Login';
 import { PrivateRoute } from './components/PrivateRoute';
+import { Details } from './components/Deatails';
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <PrivateRoute path = "/dashboard">
               <Dashboard />
+          </PrivateRoute>
+          <PrivateRoute path = "/details/:id">
+              <Details />
           </PrivateRoute>
           <Route  path = "/newshows">
            <Newshows />
